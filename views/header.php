@@ -8,7 +8,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
             <a class="nav-link" href="<?= constant('URL') ?>inicio/index">Inicio</a>
-            <a class="nav-link" href="<?= constant('URL') ?>producto/index">Productos</a>
+            <a class="nav-link" href="<?= constant('URL') ?>empleado/index">Empleados</a>
+            <a class="nav-link" href="<?= constant('URL') ?>area/index">Areas</a>
+            <a class="nav-link" href="<?= constant('URL') ?>sucursal/index">Sucursales</a>
             <a class="nav-link" href="<?= constant('URL') ?>informe/pdfMarcas" target="_blank">Reporte 1</a>
             <a class="nav-link" href="<?= constant('URL') ?>informe/pdfProductos">Reporte 2</a>
             <a class="nav-link" href="<?= constant('URL') ?>inicio/logout">Salir</a>
@@ -16,10 +18,8 @@
                 <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
                     Gráficos
                 </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="<?= constant('URL') ?>graficos/anillo">Anillo</a>
-                    <a class="dropdown-item" href="<?= constant('URL') ?>graficos/barras">Barras</a>
-                    <a class="dropdown-item" href="<?= constant('URL') ?>graficos/circular">Circular</a>
+                <div class="dropdown-menu"> 
+                    <a class="dropdown-item" href="<?= constant('URL') ?>graficos/barras">Lineas</a> 
                 </div>
             </div>
         </div>
