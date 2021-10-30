@@ -20,7 +20,7 @@
 
         public function reporteEmpleados($valor){
             $arreglo = [];
-            if($valor!=""): $where = 'WHERE p.marca='.$valor;  else:  $where = ''; endif;
+            if($valor!=""): $where = 'WHERE e.codigoEmpleado='.$valor;  else:  $where = ''; endif;
             $sql = "select e.codigoEmpleado, e.nombre, a.nombre as area, s.nombre as sucursal,
              e.sueldoBase, ((e.sueldoBase*0.07-e.sueldoBase*0.10-e.sueldoBase*0.0925)+ e.sueldoBase)as sueldoFinal 
             from empleado e inner join area a on a.codigoArea = e.codigoArea 

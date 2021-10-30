@@ -29,8 +29,8 @@ $(document).ready(function () {
       success: function (response) {
         // console.log(response)
         var mensaje = response
-          ? "Producto insertado"
-          : "Error al insertar el producto";
+          ? "Empleado insertado"
+          : "Error al insertar el empleado";
         alert(mensaje);
         form[0].reset();
       },
@@ -54,7 +54,7 @@ $(document).ready(function () {
       success: function (response) {
         var mensaje = response
           ? "Producto modificado"
-          : "Error al modificar el producto";
+          : "Error al modificar el empleado";
         alert(mensaje);
       },
       error: function () {
@@ -67,20 +67,37 @@ $(document).ready(function () {
   $("body").on("click", "#btnEliminar", function (e) {
     e.preventDefault();
     var href = $(this).attr("href");
-    $.ajax({
-      type: "GET",
-      url: href,
-      success: function (response) {
-        var mensaje = response
-          ? "Producto eliminado"
-          : "Error al eliminar el producto";
-        alert(mensaje);
-        // Invocar función para listar productos
-        mostrarProductos();
-      },
-      error: function () {
-        console.log("Error de ajax");
-      },
-    });
+    swal.fire({ 
+      icon: 'question', 
+      title: '¿Esta seguro de eliminar ?',
+      showCancelButton: true, 
+      confirmButtonText: 'Si, Eliminar' 
+      }).then(function(result) { 
+              if (result.isConfirmed) { 
+                $.ajax({
+                  type: "GET",
+                  url: href,
+                  success: function (response) {
+                    var mensaje = response
+                      ? "Producto eliminado"
+                      : "Error al eliminar el empleado"; 
+                    Swal.fire(mensaje);
+                    // Invocar función para listar productos
+                    mostrarEmpleados();
+                  },
+                  error: function () { 
+                    Swal.fire("Error de ajax");
+                  },
+                });
+
+              } 
+              else if (result.isDismissed) { 
+                  swal.fire( 
+                      'Operación cancelada', '', 
+                      'warning' 
+                  ) 
+              } 
+      }); 
+   
   });
 });

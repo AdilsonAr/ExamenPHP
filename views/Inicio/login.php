@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+    body{
+        background-image: url(<?= constant('URL') ?>public/img/background_login.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #1d494a;
+    }
+</style>
 </head>
 
 <body>
@@ -14,7 +22,7 @@
         <div class="row align-items-center justify-content-center vh-100">
             <div class="col-lg-4 col-md-4 col-sm-12 card">
                 <div class="card-body">
-                    <h2 class="text-center pt-3">Login</h2>
+                <img src="<?= constant('URL') ?>public/img/login.jpg" class="img-fluid d-block mx-auto">
                     <form action="<?= constant('URL') ?>Inicio/index" method="POST">
                         Usuario
                         <input type="text" class="form-control" name="txtUsuario">

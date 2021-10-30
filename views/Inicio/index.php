@@ -17,7 +17,7 @@
         <div class="row justify-content-center mt-4">
             <div class="col-lg-10 mt-4">
                 <h1 class="text-center text-primary">Bienvenido/a <?= $_SESSION['usuario'] ?></h1>
-                <img src="<?= constant('URL') ?>public/img/banner.jpg" class="img-fluid d-block mx-auto">
+                <img src="<?= constant('URL') ?>public/img/banner.png" class="img-fluid d-block mx-auto">
             </div>
         </div>
     </div>
